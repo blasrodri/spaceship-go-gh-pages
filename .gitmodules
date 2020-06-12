@@ -1,0 +1,3 @@
+[submodule "spaceship-go"]
+	path = spaceship-go
+	url = https://github.com/blasrodri/spaceship-go.git
