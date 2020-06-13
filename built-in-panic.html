@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html" class="active"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html" class="active"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">6.1.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.2.</strong> Making error great again</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -152,15 +152,15 @@
 deferred functions are still being called, and once they complete this goroutine
 returns to the caller. To the caller, the panic on the callee triggers a
 termination on itself. This is a recursive mechanism that can eventually terminate
-in the program exiting with a non zero code. However, it's possbile to control it
-using recover. <code>panic</code> have different variants, and some are implemented in assembly,
-while some other purely in Go. </p>
-<pre><code class="language-go">// Some of the ones implemented in go
+in the program exiting with a non-zero code. However, it's possbile to control it
+using recover. <code>panic</code> has different variants, and some are implemented in assembly,
+while some other purely in Go.</p>
+<pre><code class="language-go">// Some are implemented in go
 
 func panicshift()
 func panicdivide()
 </code></pre>
-<pre><code class="language-go">// Some fo the ones implemented in assembly
+<pre><code class="language-go">// Some others are implemented in assembly
 
 func panicIndex(x, y int)
 func panicIndexU(x uint, y int)

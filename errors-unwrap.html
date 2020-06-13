@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Constants - Spaceship Go</title>
+        <title>Unwrap - Spaceship Go</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html" class="active"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">6.1.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.2.</strong> Making error great again</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-unwrap.html" class="active"><strong aria-hidden="true">6.1.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.2.</strong> Making error great again</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,51 +147,98 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#constants" id="constants">Constants</a></h2>
-<p>Boolans true and false are defined here. And in a very smart and concise way:</p>
-<pre><code class="language-go">const (
-    true = 0 == 0 // this is always true!
-    false = 0 != 0 // this is always false!
-)
-</code></pre>
-<p>Iota (view https://github.com/golang/go/wiki/Iota and https://golang.org/ref/spec#Iota)
-represents successive untyped integer constants.</p>
-<pre><code class="language-go">const iota = 0 // Untyped int.
-</code></pre>
-<p>These two examples, describe how iota can be useful:</p>
-<pre><code class="language-go">const (
-	c0 = iota  // c0 == 0
-	c1 = iota  // c1 == 1
-	c2 = iota  // c2 == 2
-)
+                        <h2><a class="header" href="#unwrap" id="unwrap">Unwrap</a></h2>
+<p><em>(feature added in Go 1.13)</em></p>
+<p>This is an interesting feature, when building errors that
+<strong>contain other errors</strong>.</p>
+<p><code>Unwrap</code> is actually defined as follows:</p>
+<pre><code class="language-go">func Unwrap(err error) error {
 
-const (
-	a = 1 &lt;&lt; iota  // a == 1  (iota == 0)
-	b = 1 &lt;&lt; iota  // b == 2  (iota == 1)
-	c = 3          // c == 3  (iota == 2, unused)
-	d = 1 &lt;&lt; iota  // d == 8  (iota == 3)
+	u, ok := err.(interface {
+		Unwrap() error
+	})
+	if !ok {
+		return nil
+	}
+	return u.Unwrap()
+
+}
+</code></pre>
+<p>It first checks whether <code>err</code> has itself the <code>Unwrap</code> method. If it doesn't, then
+nothing else can be done. There is nothing to unwrap. Nada. But if the method
+is defined, it calls it and returns its value, which is an <code>error</code> itself.</p>
+<p>This is a very useful way of composing errors, and thus adding much more
+information. We could think of the following scenario:</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;log&quot;
+	&quot;errors&quot;
 )
+type databaseError struct {
+    err error
+}
+
+type queryMissingParamsError struct {
+    params string
+}
+
+func (de *databaseError) Unwrap() error {
+    return de.err
+}
+
+func (de *databaseError) Error() string {
+    return fmt.Sprintf(&quot;Database error. %s&quot;, de.err)
+}
+
+func (qmp *queryMissingParamsError) Error() string {
+    return fmt.Sprintf(&quot;Some parameter were missing: %s&quot;, qmp.params)
+}
+
+// bogus query
+type Query struct {}
+
+func (q *Query) Check() error {
+    return &amp;databaseError {
+        err: &amp;queryMissingParamsError {
+            params: &quot;name&quot;,
+        },
+    }
+}
+
+func handleDatabaseQuery(query *Query) error {
+    err := query.Check()
+    if err == nil {
+        return nil
+    }
+    log.Print(err)
+    return errors.Unwrap(err)
+}
+func main() {
+	q := &amp;Query{}
+	err := handleDatabaseQuery(q)
+	fmt.Println(err)
+}
+
 </code></pre>
-<p>Note: The <code>&lt;&lt;</code> is a left shift operand, which shift lefts the operand by an integer
-(in this case <code>iota</code> value). So, for instance <code>1 &lt;&lt; 2</code> equals <code>1 * 2 * 2</code>.</p>
-<p><code>nil</code> is a widely used variable. It is defined as:</p>
-<pre><code class="language-go">var nil Type
-</code></pre>
-<p>It represents the zero value of a type, within these clases: slices, pointer,
-map, func, interface, or channel.</p>
+<p>In this example, we can see how an error can pack and unpack other errors. And
+we can choose to define a strategy for the different scenarios. So, in this
+particular example, we could ask the user to make the query again and remind
+her not to forget to include <em>name</em> as a paramter.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="built-in.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="errors-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="built-in-make-and-new.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="errors-great-again.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -203,13 +250,13 @@ map, func, interface, or channel.</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="built-in.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="errors-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="built-in-make-and-new.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="errors-great-again.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

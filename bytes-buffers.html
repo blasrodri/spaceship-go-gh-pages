@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html" class="active"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html" class="active"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">6.1.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.2.</strong> Making error great again</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -157,18 +157,18 @@ resized to accomodate more or less bytes. It lets you write (<code>WriteByte</co
 read bytes from it (<code>ReadByte</code>), remove some bytes (<code>Truncate</code>), remove all (<code>Reset</code>), etc.</p>
 <p>To create a Buffer, we need to call either <code>NewBuffer</code> or <code>NewBufferString</code>.
 The difference is in the input that they take. The former accepts a byte slice <code>[]byte</code>
-while the latter expects a string. </p>
+while the latter expects a string.</p>
 <p>For testing purposes let's say we create a buffer with some bytes:</p>
 <pre><code class="language-go">// we call
 b := bytes.NewBuffer([]byte(&quot;some bytes&quot;))
 </code></pre>
-<p>To get the slice back, there is a <code>Bytes</code> method that can be used:</p>
+<p>To get the slice back, the <code>Bytes</code> method that can be used:</p>
 <pre><code class="language-go">b.Bytes() // [115 111 109 101 32 98 121 116 101 115]
 </code></pre>
 <p>We can read a fixed amount of bytes by using <code>Next(n int)</code>. It's important to note
 that calling this method will actually <strong>read the bytes</strong>. And thus, the buffer
-will have a new length of the previous one minus <code>n</code>. If the buffer's length
-was less than n then the method will return the entire buffer.</p>
+will have a new length of the previous one minus <code>n</code>. In case the buffer's length
+was less than n, then the method will return the entire buffer.</p>
 <p>Alternatively, buffers can grow, be truncated and reset. For that, we have:</p>
 <pre><code class="language-go">func (b *Buffer) Grow(n int) // increases the buffer's capacity
 func (b *Buffer) Truncate(n int)
@@ -181,7 +181,7 @@ If n &lt; 0 or n &gt; b.Len() then it panics.</p>
 <p>If you want to shrink a buffer, Go does not offer a built in way of doing it.
 An alternative of achieving it would be:</p>
 <pre><code class="language-go">// https://stackoverflow.com/questions/16748330/does-go-have-no-real-way-to-shrink-a-slice-is-that-an-issue
-b = append([]T(nil), b[:newSize]...) 
+b = append([]T(nil), b[:newSize]...)
 </code></pre>
 <p>It is possible to work with the <code>Reader</code> interface. But it won't be covered in this chapter.</p>
 

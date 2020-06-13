@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">6.1.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.2.</strong> Making error great again</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,11 +150,11 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#preface" id="preface">Preface</a></h1>
-<p>Welcome, traveler! This is a set of notes of my journey into part of Go's 
+<p>Welcome, traveler! This is a set of notes of my journey into part of Go's
 standard library, comprised into a book. I hope you enjoy it!
-Each chapter provides a dive into some of the packages. I will provide a brief
+Each chapter provides a dive into some packages. I will provide a brief
 introduction of what is the main purpose of the package, and some examples to
-help understanding. In some cases, I will add some references to external
+help to understand. In some cases, I will add some references to external
 content that work either as a complementary view to the topic, or even to extend
 the coverage of the subject.</p>
 <h2><a class="header" href="#who-is-this-book-for" id="who-is-this-book-for">Who is this book for?</a></h2>
@@ -169,6 +169,13 @@ a deeper understanding of what tools the language and its runtime has to offer.<
 For comments, issues, or any kind of feedback, please use the
 <a href="https://github.com/blasrodri/spaceship-go">Spaceship Go</a> repository. PR's are more
 than wlecome, of any type!</p>
+<h2><a class="header" href="#special-thanks" id="special-thanks">Special thanks</a></h2>
+<p>Most of the book is just my interpretation of the Go's standard library. Besides this, I've
+found that the Go Blog is an extremely useful resource. Big thanks especially
+to Andrew Gerrand, for all the great contributions he has in that space.</p>
+<p>There is also a Youtube channel called <strong>just for func</strong>, which I also highly
+recommend. It was particularly useful to prepare the groundwork for the <code>Context</code>
+chapter. Thanks to its creator, Francesc Campoy.</p>
 <h1><a class="header" href="#notes-about-go-docs" id="notes-about-go-docs">Notes about Go docs</a></h1>
 <p>When visiting any of the packages in <a href="https://golang.org/pkg/">Go Std Library</a>,
 there is a certain pattern that is being kept through. It helps to dissect it,
@@ -241,7 +248,7 @@ map, func, interface, or channel.</p>
 <h2><a class="header" href="#make" id="make">make</a></h2>
 <p><code>make</code> is a very singular function. Its purpose is to allocate and initialize
 an object of type slice, map, or chan (only). The output depends on the type
-it's operating upon. You can see the differences, depending the type in the
+it's operating upon. You can see the differences, depending upon the type in the
 excerpt below:</p>
 <pre><code class="language-go">// from src/go/cmd/compile/internal/gc/builtin/runtime.go
 func makemap64(mapType *byte, hint int64, mapbuf *any) (hmap map[any]any)
@@ -300,21 +307,21 @@ func main() {
 deferred functions are still being called, and once they complete this goroutine
 returns to the caller. To the caller, the panic on the callee triggers a
 termination on itself. This is a recursive mechanism that can eventually terminate
-in the program exiting with a non zero code. However, it's possbile to control it
-using recover. <code>panic</code> have different variants, and some are implemented in assembly,
-while some other purely in Go. </p>
-<pre><code class="language-go">// Some of the ones implemented in go
+in the program exiting with a non-zero code. However, it's possbile to control it
+using recover. <code>panic</code> has different variants, and some are implemented in assembly,
+while some other purely in Go.</p>
+<pre><code class="language-go">// Some are implemented in go
 
 func panicshift()
 func panicdivide()
 </code></pre>
-<pre><code class="language-go">// Some fo the ones implemented in assembly
+<pre><code class="language-go">// Some others are implemented in assembly
 
 func panicIndex(x, y int)
 func panicIndexU(x uint, y int)
 </code></pre>
 <h2><a class="header" href="#recover" id="recover">recover</a></h2>
-<p>The recover built-in function allows a program to manage behavior of a panicking
+<p>Recover is a built-in function allows a program to manage behavior of a panicking
 goroutine. It is useful only <strong>inside a deferred function</strong>. It stops the panicking
 sequence by restoring normal execution and retrieves the error value passed to the
 call of panic. If recover is called outside the deferred function it will not stop
@@ -421,7 +428,7 @@ func g(i int) {
 </code></pre>
 <h1><a class="header" href="#bytes" id="bytes">Bytes</a></h1>
 <p>Bytes are program's building blocks.</p>
-<p>In Go, a byte is a type alias of a <code>uint8</code>, and thus it is defined as:</p>
+<p>In Go, a byte is a type alias of <code>uint8</code>, and thus it is defined as:</p>
 <pre><code class="language-go">type byte = uint8
 </code></pre>
 <p>And thus, when talking about <strong>bytes</strong>, we mean a slice of <code>byte</code>, namely: <code>[]byte</code>.</p>
@@ -430,7 +437,7 @@ func g(i int) {
 to work on an application related to networking, operating systems, databases,
 you will likely end up working with bytes. And that is why it's very important
 to understand what tools are available off the self.</p>
-<p>In the following sections, we will address some of the operations Go allows us to
+<p>In the following sections, we will address some operations Go allows us to
 perform on bytes.</p>
 <h2><a class="header" href="#compare" id="compare">Compare</a></h2>
 <p>First, we can compare two bytes. That is, having a function that tells us whether
@@ -466,7 +473,7 @@ want to get more details in this topic.</p>
 <p>Let's say we have some bytes, represented as a slice of byte, which in Go lingo means
 <code>[]byte</code>. If we want to verify whether these bytes contain a certain subset of bytes,
 and we're particularly interested in knowing where in the slice they are located
-we can use the function <code>Index</code>, provided in the package <strong>bytes</strong> .</p>
+we can use the function <code>Index</code>, provided in the package <strong>bytes</strong>.</p>
 <pre><code class="language-go">func Index(s, sep []byte) int
 </code></pre>
 <p>The way it is implemented is as follows:</p>
@@ -474,8 +481,8 @@ we can use the function <code>Index</code>, provided in the package <strong>byte
 <li>If the lenght of the separator is 0, then it returns 0. Nothing more to do</li>
 <li>If it is 1, it calls another function called IndexByte to do the work.
 This is also an assembly function. One of its variants can be found <a href="https://golang.org/src/internal/bytealg/indexbyte_amd64.s">here</a></li>
-<li>If the sizes between sep and s match, then it checks whether they are equal or not. For that, it calls Equal,which we have already mentioned.</li>
-<li>If the separator length is bigger than one, then it's no longer a byte. It then goes to a more complex logic involving bytealgo.Index .</li>
+<li>If the sizes between sep and s match, then it checks whether they are equal or not. For that, it calls Equal, which we have already mentioned.</li>
+<li>If the separator length is bigger than one, then it's no longer a byte. It then goes to a more complex logic involving <code>bytealg.Index</code>.</li>
 </ul>
 <p>Besides the full implementation, sometimes it's usefule to follow how things work under the hood.
 And in such a low level package, we can find the need of working with assembly and targetting
@@ -490,18 +497,18 @@ resized to accomodate more or less bytes. It lets you write (<code>WriteByte</co
 read bytes from it (<code>ReadByte</code>), remove some bytes (<code>Truncate</code>), remove all (<code>Reset</code>), etc.</p>
 <p>To create a Buffer, we need to call either <code>NewBuffer</code> or <code>NewBufferString</code>.
 The difference is in the input that they take. The former accepts a byte slice <code>[]byte</code>
-while the latter expects a string. </p>
+while the latter expects a string.</p>
 <p>For testing purposes let's say we create a buffer with some bytes:</p>
 <pre><code class="language-go">// we call
 b := bytes.NewBuffer([]byte(&quot;some bytes&quot;))
 </code></pre>
-<p>To get the slice back, there is a <code>Bytes</code> method that can be used:</p>
+<p>To get the slice back, the <code>Bytes</code> method that can be used:</p>
 <pre><code class="language-go">b.Bytes() // [115 111 109 101 32 98 121 116 101 115]
 </code></pre>
 <p>We can read a fixed amount of bytes by using <code>Next(n int)</code>. It's important to note
 that calling this method will actually <strong>read the bytes</strong>. And thus, the buffer
-will have a new length of the previous one minus <code>n</code>. If the buffer's length
-was less than n then the method will return the entire buffer.</p>
+will have a new length of the previous one minus <code>n</code>. In case the buffer's length
+was less than n, then the method will return the entire buffer.</p>
 <p>Alternatively, buffers can grow, be truncated and reset. For that, we have:</p>
 <pre><code class="language-go">func (b *Buffer) Grow(n int) // increases the buffer's capacity
 func (b *Buffer) Truncate(n int)
@@ -514,19 +521,19 @@ If n &lt; 0 or n &gt; b.Len() then it panics.</p>
 <p>If you want to shrink a buffer, Go does not offer a built in way of doing it.
 An alternative of achieving it would be:</p>
 <pre><code class="language-go">// https://stackoverflow.com/questions/16748330/does-go-have-no-real-way-to-shrink-a-slice-is-that-an-issue
-b = append([]T(nil), b[:newSize]...) 
+b = append([]T(nil), b[:newSize]...)
 </code></pre>
 <p>It is possible to work with the <code>Reader</code> interface. But it won't be covered in this chapter.</p>
 <h1><a class="header" href="#context" id="context">Context</a></h1>
 <p>Package context defines the Context type. A context can include deadlines,
 cancellation signals, and other request-scoped values across API boundaries
 and between processes. A key feature of this pattern is that it allows signals
-to be propagated. So for instance, when a context is cancelled then all the 
-contexts derived from it are cancelled as well. </p>
+to be propagated. So for instance, when a context is cancelled then all the
+contexts derived from it are cancelled as well.</p>
 <p>Context is a very singular pattern, that I have not seen implemented in the
 standard libraries of other languages. And since it's widely adopted in different
 projects, I thought it was worth covering it.</p>
-<p>Go proposes an interface to work with <code>Context</code>, whichh is </p>
+<p>Go proposes an interface to work with <code>Context</code>, whichh is</p>
 <blockquote>
 <p>Programs that use Contexts should follow these rules to keep interfaces
 consistent across packages and enable static analysis tools to check context propagation:</p>
@@ -537,8 +544,8 @@ The Context should be the first parameter, typically named ctx:</p>
 	// ... use ctx ...
 }
 </code></pre>
-<p>Next, we describe some of the different functionalities offered  by the package
-and show alternatives of how it can be used. Much of it has been taken from 
+<p>Next, we describe some different functionalities offered by the package
+and show alternatives of how it can be used. Much of it has been taken from
 <a href="https://blog.golang.org/context">this blog post</a> by Sameer Ajmani.</p>
 <h1><a class="header" href="#context-details" id="context-details">Context details</a></h1>
 <p>The <code>Context</code> carries a deadline, a cancellation signal, <code>Done</code> and other values
@@ -550,7 +557,7 @@ across processes and APIs. It is defined as an interface:</p>
     Value(key interface{}) interface{}
 }
 </code></pre>
-<p>Note:  these methods may be called by multiple goroutines simultaneously. </p>
+<p>Note: these methods may be called by multiple goroutines simultaneously.</p>
 <p>The package provides different types of contexts, with different <em>service levels</em>:</p>
 <ul>
 <li>emtpyCtx: it's one that is never cancelled, has no values and no deadline</li>
@@ -570,15 +577,15 @@ func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc)
 <pre><code class="language-go">type CancelFunc func()
 </code></pre>
 <p>When creating a context, there are some factory functions. And all of them return a <code>CancelFunc</code> type.
-This is, as its name indicates, a function. It tells an operation to abandon its work. It's async, and 
+This is, as its name indicates, a function. It tells an operation to abandon its work. It's async, and
 it can be called by multiple goroutines simultaneously. After the first call, the subsequent calls are
 no-ops.</p>
-<p>As an example, for the <code>cancelCtx</code> there is a <code>cancel</code> method. It closes the <code>done</code> channel and cancels
+<p>As an example, for the <code>cancelCtx</code>, <code>cancel</code> method exists. It closes the <code>done</code> channel and cancels
 all of its children, plus some other cleaning tasks.</p>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
 <p>This is an extension of the original example provided in the std library.
 It depicts the usage of context within several goroutines that form a tree.</p>
-<p>Once the main goroutine triggers the <code>cancel</code> function, all of the others
+<p>Once the main goroutine triggers the <code>cancel</code> function, all the others
 are also cancelled.</p>
 <pre><code class="language-go">package main
 
@@ -642,7 +649,7 @@ func doStuff(ctx context.Context) {
 }
 
 </code></pre>
-<p>A plausible output (it's non deterministic):</p>
+<p>A plausible output (it's non-deterministic):</p>
 <pre><code>1
 2
 3
@@ -702,6 +709,170 @@ func main() {
 <li><a href="https://github.com/grpc/grpc-go">gRPC</a></li>
 <li><a href="https://github.com/dgraph-io/dgraph">dgraph</a></li>
 </ol>
+<h2><a class="header" href="#errors" id="errors">Errors</a></h2>
+<p>Error handling is a very important topic in software engineering. There are
+plenty different schools of thought. Go's approach to it is very simple.
+It treates <a href="https://blog.golang.org/errors-are-values"><strong>errors as values</strong></a>,
+and to some people unsufficient. But we won't get into this discussion here.</p>
+<p>The <code>error</code> type is used to indicate an <em>abnormal state</em>. When this happens,
+there are several ways to act. In this chapter, we will only focus on the
+availibility of tools that Go provides the developer to characterize and respond
+to this <em>abnomalities</em>.</p>
+<p><code>error</code> is defined in the <code>built-in</code> package as:</p>
+<pre><code class="language-go">type error interface {
+    Error() string
+}
+</code></pre>
+<p>However, this package provides nothing else than this interface. Most of the
+sorrounding infrastructure is provided within the <code>errors</code> package instead.</p>
+<h2><a class="header" href="#unwrap" id="unwrap">Unwrap</a></h2>
+<p><em>(feature added in Go 1.13)</em></p>
+<p>This is an interesting feature, when building errors that
+<strong>contain other errors</strong>.</p>
+<p><code>Unwrap</code> is actually defined as follows:</p>
+<pre><code class="language-go">func Unwrap(err error) error {
+
+	u, ok := err.(interface {
+		Unwrap() error
+	})
+	if !ok {
+		return nil
+	}
+	return u.Unwrap()
+
+}
+</code></pre>
+<p>It first checks whether <code>err</code> has itself the <code>Unwrap</code> method. If it doesn't, then
+nothing else can be done. There is nothing to unwrap. Nada. But if the method
+is defined, it calls it and returns its value, which is an <code>error</code> itself.</p>
+<p>This is a very useful way of composing errors, and thus adding much more
+information. We could think of the following scenario:</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;log&quot;
+	&quot;errors&quot;
+)
+type databaseError struct {
+    err error
+}
+
+type queryMissingParamsError struct {
+    params string
+}
+
+func (de *databaseError) Unwrap() error {
+    return de.err
+}
+
+func (de *databaseError) Error() string {
+    return fmt.Sprintf(&quot;Database error. %s&quot;, de.err)
+}
+
+func (qmp *queryMissingParamsError) Error() string {
+    return fmt.Sprintf(&quot;Some parameter were missing: %s&quot;, qmp.params)
+}
+
+// bogus query
+type Query struct {}
+
+func (q *Query) Check() error {
+    return &amp;databaseError {
+        err: &amp;queryMissingParamsError {
+            params: &quot;name&quot;,
+        },
+    }
+}
+
+func handleDatabaseQuery(query *Query) error {
+    err := query.Check()
+    if err == nil {
+        return nil
+    }
+    log.Print(err)
+    return errors.Unwrap(err)
+}
+func main() {
+	q := &amp;Query{}
+	err := handleDatabaseQuery(q)
+	fmt.Println(err)
+}
+
+</code></pre>
+<p>In this example, we can see how an error can pack and unpack other errors. And
+we can choose to define a strategy for the different scenarios. So, in this
+particular example, we could ask the user to make the query again and remind
+her not to forget to include <em>name</em> as a paramter.</p>
+<h2><a class="header" href="#making-error-great-again" id="making-error-great-again">Making error great again</a></h2>
+<p>The following is a canonical example of how horrible error handling
+can become in Go:</p>
+<pre><code class="language-go">_, err = fd.Write(p0[a:b])
+if err != nil {
+    return err
+}
+_, err = fd.Write(p1[c:d])
+if err != nil {
+    return err
+}
+_, err = fd.Write(p2[e:f])
+if err != nil {
+    return err
+}
+// and so on
+</code></pre>
+<p>An improvement, using a helper function:</p>
+<pre><code class="language-go">var err error
+write := func(buf []byte) {
+    if err != nil {
+        return
+    }
+    _, err = w.Write(buf)
+}
+write(p0[a:b])
+write(p1[c:d])
+write(p2[e:f])
+// and so on
+if err != nil {
+    return err
+}
+</code></pre>
+<p>However, here we need to be sure that <code>err</code> is being captured by <code>write</code>
+every time we call this function. We could actually do better, by creating a
+new type, and adding a method for it that does what <code>write</code> is doing here. Then,
+we will not need to have any closure, nor ensure that the value is being closed
+by the function.</p>
+<p>This is even a much better way of working with erros. And in some ways, it
+brings to the table some of Haskell's/FP approach to error handling:</p>
+<pre><code class="language-go">type errWriter struct {
+    w   io.Writer
+    err error
+}
+
+func (ew *errWriter) write(buf []byte) {
+    if ew.err != nil {
+        return
+    }
+    _, ew.err = ew.w.Write(buf)
+}
+</code></pre>
+<pre><code class="language-go">ew := &amp;errWriter{w: fd}
+ew.write(p0[a:b])
+ew.write(p1[c:d])
+ew.write(p2[e:f])
+// and so on
+if ew.err != nil {
+    return ew.err
+}
+</code></pre>
+<p>Here, <code>write</code> checks whether <code>errWriter</code> have failed before. If it
+did, then it won't do anything again; we are an <em>abnormal state</em> already.
+Otherwise, it's free to do some work.</p>
+<h3><a class="header" href="#references" id="references">References:</a></h3>
+<ul>
+<li>https://blog.golang.org/errors-are-values</li>
+<li>http://jxck.hatenablog.com/entry/golang-error-handling-lesson-by-rob-pike</li>
+</ul>
 
                     </main>
 
