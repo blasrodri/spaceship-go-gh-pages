@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-As-Is.html"><strong aria-hidden="true">6.1.</strong> As and Is</a></li><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">6.2.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.3.</strong> Making error great again</a></li></ol></li><li class="chapter-item expanded "><a href="sync-intro.html"><strong aria-hidden="true">7.</strong> Sync</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sync-cond.html"><strong aria-hidden="true">7.1.</strong> Cond</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-As-Is.html"><strong aria-hidden="true">6.1.</strong> As and Is</a></li><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">6.2.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.3.</strong> Making error great again</a></li></ol></li><li class="chapter-item expanded "><a href="sync-intro.html"><strong aria-hidden="true">7.</strong> Sync</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sync-cond.html"><strong aria-hidden="true">7.1.</strong> Cond</a></li><li class="chapter-item expanded "><a href="sync-mutex.html"><strong aria-hidden="true">7.2.</strong> Mutex</a></li><li class="chapter-item expanded "><a href="sync-do.html"><strong aria-hidden="true">7.3.</strong> Do</a></li><li class="chapter-item expanded "><a href="sync-pool.html"><strong aria-hidden="true">7.4.</strong> Pool</a></li><li class="chapter-item expanded "><a href="sync-waitgroup.html"><strong aria-hidden="true">7.5.</strong> WaitGroup</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -983,6 +983,113 @@ it can be modelled as follow:</p>
     // Unlock the Locker when its done
 }
 </code></pre>
+<p>For completeness, a <code>Locker</code> is just an interface that defines two methods: <code>Lock</code> and <code>Unlock</code>.</p>
+<h2><a class="header" href="#mutex" id="mutex">Mutex</a></h2>
+<p>A <code>Mutex</code> is a flag that can be held by at most one goroutine at at time. Its
+name is derived from <em>mutually exclusive</em>, which indicates its purpose. The
+<em>raison d’etre</em> of a <code>Mutex</code> is synchronization, by preventing that no other
+goroutine can perform an operation over the resources that are being mutexed.</p>
+<p>It fulfills the <code>Locker</code> interface, thus it defines <code>Lock</code> and <code>Unlock</code>.</p>
+<p>It's important to note that a lock doesn't belong to a particular goroutine.
+Thus, it's allowed for a goroutine to lock the <code>Mutex</code> and another to <code>Unlock</code>
+it. Therefore, it's still important how the different goroutines interact with
+the resource in order both to avoid deadlocks but also to avoid accessing to
+a resource when it's not locked.</p>
+<h2><a class="header" href="#lock" id="lock">Lock</a></h2>
+<p>This is how <code>Lock</code> is implemented. But the real meat lies in <code>lockSlow</code>, which
+we won't cover here. I'm mostly copying the definition just to see how the pieces
+are put together. The complete implementation is quite complicated, and it involves
+assembly code in the very end.</p>
+<pre><code class="language-go">func (m *Mutex) Lock() {
+	// Fast path: grab unlocked mutex.
+	if atomic.CompareAndSwapInt32(&amp;m.state, 0, mutexLocked) {
+		if race.Enabled {
+			race.Acquire(unsafe.Pointer(m))
+		}
+		return
+	}
+	m.lockSlow()
+}
+</code></pre>
+<p>If the <code>Mutex</code> is already locked, then the goroutine that calls <code>Lock</code> will block
+until the <code>Mutex</code> gets released, and can be locked by it. </p>
+<h2><a class="header" href="#unlock" id="unlock">Unlock</a></h2>
+<p>This method is responsible for unlocking the <code>Mutex</code>. It can be called from any
+goroutine, and it's not necessary that is the one that locked it. However, if
+it's unlocked, it cannot be unlocked right away. Otherwise, it panics. 
+The implementation of this behavior is as follows:</p>
+<pre><code class="language-go">const (
+    mutexLocked = 1 &lt;&lt; iota // mutex is locked
+)
+
+func (m *Mutex) unlockSlow(new int32) {
+	if (new+mutexLocked)&amp;mutexLocked == 0 {
+		throw(&quot;sync: unlock of unlocked mutex&quot;)
+    }
+    /*
+    ...
+    */
+}
+</code></pre>
+<h2><a class="header" href="#once---do" id="once---do">Once - Do</a></h2>
+<p>A very simple - but sometimes useful - method is <code>Do</code>. Its role is simply to
+guarantee that a function run through it won't run more than once. This means
+that if we have:</p>
+<pre><code class="language-go">var once sync.Once
+a := make([]int, 0)
+once.Do(func() {a = append(a, 1)})
+once.Do(func() {a = append(a, 2)})
+fmt.Print(a) // [1] and not [1 2]
+</code></pre>
+<p><code>Once</code> is the right type, when it's important that a certain resource gets
+called or initialized only once. In order to be able to call it again, and
+that the function is actually run, another instance of <code>Once</code> needs to be
+defined. And <code>Do</code> called from that new instance.</p>
+<h2><a class="header" href="#pool" id="pool">Pool</a></h2>
+<blockquote>
+<p>A Pool is a set of temporary objects that may be individually saved and retrieved.</p>
+</blockquote>
+<p><code>Pool</code> provides a way to amortize allocation overhead. It serves for when there
+are multiple users of a resource, and we would like to avoid having to create
+a new time every time we need to.</p>
+<p><code>Pool</code> caches allocated but unused items so that they can be available for later
+use. It releives pressure from the garbage collector. However, 
+<strong>Any item stored in the Pool may be removed automatically at</strong>
+<strong>any time without notification</strong>.</p>
+<pre><code class="language-go">type Pool struct {
+
+    // New optionally specifies a function to generate
+    // a value when Get would otherwise return nil.
+    // It may not be changed concurrently with calls to Get.
+    New func() interface{}
+    // contains filtered or unexported fields
+}
+</code></pre>
+<p>The important bit from the definition is that, whenever we call
+<code>Get</code>, and there are no items left in the pool, then it creates
+a new one by calling <code>New</code>. </p>
+<p>Once an item has been used, it can be returned to the <code>Pool</code> by
+calling <code>Put</code>. <code>Put</code> adds an item back into the <code>Pool</code>.</p>
+<h2><a class="header" href="#waitgroup" id="waitgroup">WaitGroup</a></h2>
+<blockquote>
+<p>A WaitGroup waits for a collection of goroutines to finish.
+The main goroutine calls <code>Add</code> to set the number of goroutines to wait for.
+Then each of the goroutines runs and calls <code>Done</code> when finished.
+At the same time, <code>Wait</code> can be used to block until all goroutines have finished. </p>
+</blockquote>
+<p>It's possible to have another goroutine also to wait on this group. The only
+real constraint is that <code>Add</code> can only be called by the main one.</p>
+<h3><a class="header" href="#add" id="add">Add</a></h3>
+<pre><code class="language-go">func (wg *WaitGroup) Add(delta int)
+</code></pre>
+<p>The <strong>delta</strong> defines how many more - or less - goroutines, the goroutines
+waiting need to actually wait for. When the counter gets to zero, then
+all the waiting goroutines get released. If the counter is negative, then
+<code>Add</code> panics.</p>
+<h3><a class="header" href="#done" id="done">Done</a></h3>
+<p>It decrements the counter by one.</p>
+<h3><a class="header" href="#wait-1" id="wait-1">Wait</a></h3>
+<p>Blocks the goroutine until the counter of the <code>WaitGroup</code> gets to zero.</p>
 
                     </main>
 

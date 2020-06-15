@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>recover - Spaceship Go</title>
+        <title>WaitGroup - Spaceship Go</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html" class="active"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-As-Is.html"><strong aria-hidden="true">6.1.</strong> As and Is</a></li><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">6.2.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.3.</strong> Making error great again</a></li></ol></li><li class="chapter-item expanded "><a href="sync-intro.html"><strong aria-hidden="true">7.</strong> Sync</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sync-cond.html"><strong aria-hidden="true">7.1.</strong> Cond</a></li><li class="chapter-item expanded "><a href="sync-mutex.html"><strong aria-hidden="true">7.2.</strong> Mutex</a></li><li class="chapter-item expanded "><a href="sync-do.html"><strong aria-hidden="true">7.3.</strong> Do</a></li><li class="chapter-item expanded "><a href="sync-pool.html"><strong aria-hidden="true">7.4.</strong> Pool</a></li><li class="chapter-item expanded "><a href="sync-waitgroup.html"><strong aria-hidden="true">7.5.</strong> WaitGroup</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">2.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">3.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">3.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">3.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">3.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">3.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">3.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">4.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">4.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">4.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">4.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">5.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">5.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">6.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-As-Is.html"><strong aria-hidden="true">6.1.</strong> As and Is</a></li><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">6.2.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">6.3.</strong> Making error great again</a></li></ol></li><li class="chapter-item expanded "><a href="sync-intro.html"><strong aria-hidden="true">7.</strong> Sync</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sync-cond.html"><strong aria-hidden="true">7.1.</strong> Cond</a></li><li class="chapter-item expanded "><a href="sync-mutex.html"><strong aria-hidden="true">7.2.</strong> Mutex</a></li><li class="chapter-item expanded "><a href="sync-do.html"><strong aria-hidden="true">7.3.</strong> Do</a></li><li class="chapter-item expanded "><a href="sync-pool.html"><strong aria-hidden="true">7.4.</strong> Pool</a></li><li class="chapter-item expanded "><a href="sync-waitgroup.html" class="active"><strong aria-hidden="true">7.5.</strong> WaitGroup</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,127 +147,37 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#recover" id="recover">recover</a></h2>
-<p>Recover is a built-in function allows a program to manage behavior of a panicking
-goroutine. It is useful only <strong>inside a deferred function</strong>. It stops the panicking
-sequence by restoring normal execution and retrieves the error value passed to the
-call of panic. If recover is called outside the deferred function it will not stop
-a panicking sequence. In this case, or when the goroutine is not panicking, or if
-the argument supplied to panic was nil, recover returns nil. Thus the return value
-from recover reports whether the goroutine is panicking.</p>
-<p>An example (https://blog.golang.org/defer-panic-and-recover) of the mechanisms of
-panic and defer:</p>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
-
-func main() {
-    f()
-    fmt.Println(&quot;Returned normally from f.&quot;)
-}
-
-func f() {
-    defer func() {
-        if r := recover(); r != nil {
-            fmt.Println(&quot;Recovered in f&quot;, r)
-        }
-    }()
-    fmt.Println(&quot;Calling g.&quot;)
-    g(0)
-    fmt.Println(&quot;Returned normally from g.&quot;)
-}
-
-func g(i int) {
-    if i &gt; 3 {
-        fmt.Println(&quot;Panicking!&quot;)
-        panic(fmt.Sprintf(&quot;%v&quot;, i))
-    }
-    defer fmt.Println(&quot;Defer in g&quot;, i)
-    fmt.Println(&quot;Printing in g&quot;, i)
-    g(i + 1)
-}
-
-// outputs
-// Calling g.
-// Printing in g 0
-// Printing in g 1
-// Printing in g 2
-// Printing in g 3
-// Panicking!
-// Defer in g 3
-// Defer in g 2
-// Defer in g 1
-// Defer in g 0
-// Recovered in f 4
-// Returned normally from f.
+                        <h2><a class="header" href="#waitgroup" id="waitgroup">WaitGroup</a></h2>
+<blockquote>
+<p>A WaitGroup waits for a collection of goroutines to finish.
+The main goroutine calls <code>Add</code> to set the number of goroutines to wait for.
+Then each of the goroutines runs and calls <code>Done</code> when finished.
+At the same time, <code>Wait</code> can be used to block until all goroutines have finished. </p>
+</blockquote>
+<p>It's possible to have another goroutine also to wait on this group. The only
+real constraint is that <code>Add</code> can only be called by the main one.</p>
+<h3><a class="header" href="#add" id="add">Add</a></h3>
+<pre><code class="language-go">func (wg *WaitGroup) Add(delta int)
 </code></pre>
-<p>Note that the call to referred functions goes in the opposite direction.
-This is because the defer statement places the goroutine in the goroutine stack.
-And thus, they get popped in LIFO order.</p>
-<p>The same example, but without calling <code>recover</code> inside a defer is presented below:</p>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
-
-func main() {
-    f()
-    fmt.Println(&quot;Returned normally from f.&quot;)
-}
-
-func f() {
-//    defer func() {
-//        if r := recover(); r != nil {
-//            fmt.Println(&quot;Recovered in f&quot;, r)
-//       }
-//    }()
-    fmt.Println(&quot;Calling g.&quot;)
-    g(0)
-    fmt.Println(&quot;Returned normally from g.&quot;)
-}
-
-func g(i int) {
-    if i &gt; 3 {
-        fmt.Println(&quot;Panicking!&quot;)
-        panic(fmt.Sprintf(&quot;%v&quot;, i))
-    }
-    defer fmt.Println(&quot;Defer in g&quot;, i)
-    fmt.Println(&quot;Printing in g&quot;, i)
-    g(i + 1)
-}
-
-// outputs
-// Calling g.
-// Printing in g 0
-// Printing in g 1
-// Printing in g 2
-// Printing in g 3
-// Panicking!
-// Defer in g 3
-// Defer in g 2
-// Defer in g 1
-// Defer in g 0
-
-// AND NOW, this is different!
-
-// panic: 4
-// panic PC=0x2a9cd8
-// [stack trace omitted]
-</code></pre>
+<p>The <strong>delta</strong> defines how many more - or less - goroutines, the goroutines
+waiting need to actually wait for. When the counter gets to zero, then
+all the waiting goroutines get released. If the counter is negative, then
+<code>Add</code> panics.</p>
+<h3><a class="header" href="#done" id="done">Done</a></h3>
+<p>It decrements the counter by one.</p>
+<h3><a class="header" href="#wait" id="wait">Wait</a></h3>
+<p>Blocks the goroutine until the counter of the <code>WaitGroup</code> gets to zero.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="built-in-panic.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="sync-pool.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="bytes-intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -277,15 +187,11 @@ func g(i int) {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="built-in-panic.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="sync-pool.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="bytes-intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
