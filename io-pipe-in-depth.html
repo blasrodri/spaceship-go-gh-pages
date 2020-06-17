@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Cover - Spaceship Go</title>
+        <title>Pipe in depth - Spaceship Go</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">3.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">4.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">4.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">4.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">4.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">4.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">4.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">5.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">5.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">5.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">5.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">6.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">6.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">7.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-As-Is.html"><strong aria-hidden="true">7.1.</strong> As and Is</a></li><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">7.2.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">7.3.</strong> Making error great again</a></li></ol></li><li class="chapter-item expanded "><a href="sync-intro.html"><strong aria-hidden="true">8.</strong> Sync</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sync-cond.html"><strong aria-hidden="true">8.1.</strong> Cond</a></li><li class="chapter-item expanded "><a href="sync-mutex.html"><strong aria-hidden="true">8.2.</strong> Mutex</a></li><li class="chapter-item expanded "><a href="sync-do.html"><strong aria-hidden="true">8.3.</strong> Do</a></li><li class="chapter-item expanded "><a href="sync-pool.html"><strong aria-hidden="true">8.4.</strong> Pool</a></li><li class="chapter-item expanded "><a href="sync-waitgroup.html"><strong aria-hidden="true">8.5.</strong> WaitGroup</a></li></ol></li><li class="chapter-item expanded "><a href="io-intro.html"><strong aria-hidden="true">9.</strong> IO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="io-reader-and-writer.html"><strong aria-hidden="true">9.1.</strong> Reader and Writer</a></li><li class="chapter-item expanded "><a href="io-pipe-in-depth.html"><strong aria-hidden="true">9.2.</strong> Pipe in depth</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">3.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">4.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">4.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">4.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">4.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">4.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">4.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">5.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">5.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">5.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">5.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">6.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">6.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">7.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-As-Is.html"><strong aria-hidden="true">7.1.</strong> As and Is</a></li><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">7.2.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">7.3.</strong> Making error great again</a></li></ol></li><li class="chapter-item expanded "><a href="sync-intro.html"><strong aria-hidden="true">8.</strong> Sync</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sync-cond.html"><strong aria-hidden="true">8.1.</strong> Cond</a></li><li class="chapter-item expanded "><a href="sync-mutex.html"><strong aria-hidden="true">8.2.</strong> Mutex</a></li><li class="chapter-item expanded "><a href="sync-do.html"><strong aria-hidden="true">8.3.</strong> Do</a></li><li class="chapter-item expanded "><a href="sync-pool.html"><strong aria-hidden="true">8.4.</strong> Pool</a></li><li class="chapter-item expanded "><a href="sync-waitgroup.html"><strong aria-hidden="true">8.5.</strong> WaitGroup</a></li></ol></li><li class="chapter-item expanded "><a href="io-intro.html"><strong aria-hidden="true">9.</strong> IO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="io-reader-and-writer.html"><strong aria-hidden="true">9.1.</strong> Reader and Writer</a></li><li class="chapter-item expanded "><a href="io-pipe-in-depth.html" class="active"><strong aria-hidden="true">9.2.</strong> Pipe in depth</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,19 +147,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <p><img src="./controllers_brief.svg" alt="" />
-<img src="./img/cover.svg"></p>
+                        <h1><a class="header" href="#pipe" id="pipe">Pipe</a></h1>
+<p>In Go a pipe is <strong>synchronous in-memory pipe</strong>. <code>pipe</code> is a type that
+is not publicly exposed. However, <code>io</code> allows us to interact with
+it through <code>PipeWriter</code> and <code>PipeReader</code>. In order to create
+these two halves of the <code>pipe</code>, <code>io</code> has a function:</p>
+<pre><code class="language-go">func Pipe() (*PipeReader, *PipeWriter)
+</code></pre>
+<p>Just for having the full picture, and to see how it works under the hood, this
+is how <code>pipe</code> is defined:</p>
+<pre><code class="language-go">// A pipe is the shared pipe structure underlying PipeReader and PipeWriter.
+type pipe struct {
+	wrMu sync.Mutex // Serializes Write operations
+	wrCh chan []byte
+	rdCh chan int
+	once sync.Once // Protects closing done
+	done chan struct{}
+	rerr onceError
+	werr onceError
+}
+</code></pre>
+<p>Again, as consumers of <code>pipe</code> we only care about <code>PipeReader</code> and <code>PipeWriter</code>.</p>
+<blockquote>
+<p>It can be used to connect code expecting an <code>io.Reader</code> with code expecting
+an <code>io.Writer</code>.</p>
+</blockquote>
+<p>Sometimes it can happen that we hold an <code>io.Reader</code>, but we need to call a function
+that expects an <code>io.Writer</code>. <code>Pipe</code> is a really good tool for acheiving it.</p>
+<blockquote>
+<p>The data is copied directly from the <code>io.Write</code> to the corresponding <code>io.Read</code>
+(or Reads) there is no internal buffering.</p>
+</blockquote>
+<h2><a class="header" href="#video-about-pipes" id="video-about-pipes">Video about pipes</a></h2>
+<p>I really suggest anyone to visit <a href="https://www.youtube.com/watch?v=LHZ2CAZE6Gs">this video</a>
+to get a deeper understanding on
+how to use pipes.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-
-                        
-                            <a rel="next" href="preface.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="io-reader-and-writer.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+                        
+
                         
 
                         <div style="clear: both"></div>
@@ -169,11 +202,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-
-                
-                    <a rel="next" href="preface.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="io-reader-and-writer.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+                
+
                 
             </nav>
 
