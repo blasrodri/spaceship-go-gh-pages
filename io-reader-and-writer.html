@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>recover - Spaceship Go</title>
+        <title>Reader and Writer - Spaceship Go</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">3.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">4.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">4.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">4.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">4.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">4.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html" class="active"><strong aria-hidden="true">4.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">5.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">5.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">5.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">5.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">6.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">6.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">7.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-As-Is.html"><strong aria-hidden="true">7.1.</strong> As and Is</a></li><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">7.2.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">7.3.</strong> Making error great again</a></li></ol></li><li class="chapter-item expanded "><a href="sync-intro.html"><strong aria-hidden="true">8.</strong> Sync</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sync-cond.html"><strong aria-hidden="true">8.1.</strong> Cond</a></li><li class="chapter-item expanded "><a href="sync-mutex.html"><strong aria-hidden="true">8.2.</strong> Mutex</a></li><li class="chapter-item expanded "><a href="sync-do.html"><strong aria-hidden="true">8.3.</strong> Do</a></li><li class="chapter-item expanded "><a href="sync-pool.html"><strong aria-hidden="true">8.4.</strong> Pool</a></li><li class="chapter-item expanded "><a href="sync-waitgroup.html"><strong aria-hidden="true">8.5.</strong> WaitGroup</a></li></ol></li><li class="chapter-item expanded "><a href="io-intro.html"><strong aria-hidden="true">9.</strong> IO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="io-reader-and-writer.html"><strong aria-hidden="true">9.1.</strong> Reader and Writer</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> Preface</a></li><li class="chapter-item expanded "><a href="notes-about-godocs.html"><strong aria-hidden="true">3.</strong> Notes About Go Docs</a></li><li class="chapter-item expanded "><a href="built-in.html"><strong aria-hidden="true">4.</strong> Built in</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="built-in-constants.html"><strong aria-hidden="true">4.1.</strong> Constants</a></li><li class="chapter-item expanded "><a href="built-in-make-and-new.html"><strong aria-hidden="true">4.2.</strong> make and new</a></li><li class="chapter-item expanded "><a href="built-in-defer.html"><strong aria-hidden="true">4.3.</strong> defer</a></li><li class="chapter-item expanded "><a href="built-in-panic.html"><strong aria-hidden="true">4.4.</strong> panic</a></li><li class="chapter-item expanded "><a href="built-in-recover.html"><strong aria-hidden="true">4.5.</strong> recover</a></li></ol></li><li class="chapter-item expanded "><a href="bytes-intro.html"><strong aria-hidden="true">5.</strong> Bytes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bytes-compare.html"><strong aria-hidden="true">5.1.</strong> Compare</a></li><li class="chapter-item expanded "><a href="bytes-index.html"><strong aria-hidden="true">5.2.</strong> Index</a></li><li class="chapter-item expanded "><a href="bytes-buffers.html"><strong aria-hidden="true">5.3.</strong> Buffers</a></li></ol></li><li class="chapter-item expanded "><a href="context-intro.html"><strong aria-hidden="true">6.</strong> Context</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="context-details.html"><strong aria-hidden="true">6.1.</strong> In detail</a></li></ol></li><li class="chapter-item expanded "><a href="errors-intro.html"><strong aria-hidden="true">7.</strong> Errors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="errors-As-Is.html"><strong aria-hidden="true">7.1.</strong> As and Is</a></li><li class="chapter-item expanded "><a href="errors-unwrap.html"><strong aria-hidden="true">7.2.</strong> Unwrap</a></li><li class="chapter-item expanded "><a href="errors-great-again.html"><strong aria-hidden="true">7.3.</strong> Making error great again</a></li></ol></li><li class="chapter-item expanded "><a href="sync-intro.html"><strong aria-hidden="true">8.</strong> Sync</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sync-cond.html"><strong aria-hidden="true">8.1.</strong> Cond</a></li><li class="chapter-item expanded "><a href="sync-mutex.html"><strong aria-hidden="true">8.2.</strong> Mutex</a></li><li class="chapter-item expanded "><a href="sync-do.html"><strong aria-hidden="true">8.3.</strong> Do</a></li><li class="chapter-item expanded "><a href="sync-pool.html"><strong aria-hidden="true">8.4.</strong> Pool</a></li><li class="chapter-item expanded "><a href="sync-waitgroup.html"><strong aria-hidden="true">8.5.</strong> WaitGroup</a></li></ol></li><li class="chapter-item expanded "><a href="io-intro.html"><strong aria-hidden="true">9.</strong> IO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="io-reader-and-writer.html" class="active"><strong aria-hidden="true">9.1.</strong> Reader and Writer</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,111 +147,98 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#recover" id="recover">recover</a></h2>
-<p>Recover is a built-in function allows a program to manage behavior of a panicking
-goroutine. It is useful only <strong>inside a deferred function</strong>. It stops the panicking
-sequence by restoring normal execution and retrieves the error value passed to the
-call of panic. If recover is called outside the deferred function it will not stop
-a panicking sequence. In this case, or when the goroutine is not panicking, or if
-the argument supplied to panic was nil, recover returns nil. Thus the return value
-from recover reports whether the goroutine is panicking.</p>
-<p>An example (https://blog.golang.org/defer-panic-and-recover) of the mechanisms of
-panic and defer:</p>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
-
-func main() {
-    f()
-    fmt.Println(&quot;Returned normally from f.&quot;)
-}
-
-func f() {
-    defer func() {
-        if r := recover(); r != nil {
-            fmt.Println(&quot;Recovered in f&quot;, r)
-        }
-    }()
-    fmt.Println(&quot;Calling g.&quot;)
-    g(0)
-    fmt.Println(&quot;Returned normally from g.&quot;)
-}
-
-func g(i int) {
-    if i &gt; 3 {
-        fmt.Println(&quot;Panicking!&quot;)
-        panic(fmt.Sprintf(&quot;%v&quot;, i))
-    }
-    defer fmt.Println(&quot;Defer in g&quot;, i)
-    fmt.Println(&quot;Printing in g&quot;, i)
-    g(i + 1)
-}
-
-// outputs
-// Calling g.
-// Printing in g 0
-// Printing in g 1
-// Printing in g 2
-// Printing in g 3
-// Panicking!
-// Defer in g 3
-// Defer in g 2
-// Defer in g 1
-// Defer in g 0
-// Recovered in f 4
-// Returned normally from f.
+                        <h2><a class="header" href="#writer" id="writer">Writer</a></h2>
+<p>Writer is the interface that wraps the basic Write method. <code>io</code> package makes
+extensive use of this interface. <code>Writer</code> is implemented by <code>os.File</code>. Which
+in the <code>io</code> package is used to reference to <code>Stdin</code>, <code>StdOut</code>, and <code>StdErr</code>:</p>
+<pre><code class="language-go">var (
+    Stdin  = NewFile(uintptr(syscall.Stdin), &quot;/dev/stdin&quot;)
+    Stdout = NewFile(uintptr(syscall.Stdout), &quot;/dev/stdout&quot;)
+    Stderr = NewFile(uintptr(syscall.Stderr), &quot;/dev/stderr&quot;)
+)
 </code></pre>
-<p>Note that the call to referred functions goes in the opposite direction.
-This is because the defer statement places the goroutine in the goroutine stack.
-And thus, they get popped in LIFO order.</p>
-<p>The same example, but without calling <code>recover</code> inside a defer is presented below:</p>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
-
-func main() {
-    f()
-    fmt.Println(&quot;Returned normally from f.&quot;)
+<h3><a class="header" href="#how-does-writer-works" id="how-does-writer-works">How does writer works?</a></h3>
+<blockquote>
+<p>Write writes len(p) bytes from p to the underlying data stream.
+It returns the number of bytes written from p (0 &lt;= n &lt;= len(p))
+and any error encountered that caused <code>write</code> function to stop
+early. Write must return a non-nil error if it returns n &lt; len(p).
+<code>Write</code> must not modify the slice data, even temporarily.</p>
+</blockquote>
+<p>Implementations must not retain p.</p>
+<pre><code class="language-go">type Writer interface {
+    Write(p []byte) (n int, err error)
 }
+</code></pre>
+<p>To see an implementation, we can check the one for <code>os.File</code>. There
+are some OS dependent helper functions that help <code>Write</code> doing their
+job. But essentailly it is a transparent copy of its description.</p>
+<p>Check a fragment of the POSIX implementatiof of <code>Write</code> from the source
+code in the <code>os</code> package:</p>
+<pre><code class="language-go">// Write writes len(b) bytes to the File.
+// It returns the number of bytes written and an error, if any.
+// Write returns a non-nil error when n != len(b).
 
-func f() {
-//    defer func() {
-//        if r := recover(); r != nil {
-//            fmt.Println(&quot;Recovered in f&quot;, r)
-//       }
-//    }()
-    fmt.Println(&quot;Calling g.&quot;)
-    g(0)
-    fmt.Println(&quot;Returned normally from g.&quot;)
+func (f *File) Write(b []byte) (n int, err error) {
+    // for posix f.checkValid returns nil unless f is nil
+	if err := f.checkValid(&quot;write&quot;); err != nil {
+		return 0, err
+	}
+	n, e := f.write(b)
+	if n &lt; 0 {
+		n = 0
+	}
+	if n != len(b) {
+		err = io.ErrShortWrite
+	}
+	epipecheck(f, e)
+
+if e != nil {
+		err = f.wrapErr(&quot;write&quot;, e)
+	}
+	return n, err
 }
-
-func g(i int) {
-    if i &gt; 3 {
-        fmt.Println(&quot;Panicking!&quot;)
-        panic(fmt.Sprintf(&quot;%v&quot;, i))
-    }
-    defer fmt.Println(&quot;Defer in g&quot;, i)
-    fmt.Println(&quot;Printing in g&quot;, i)
-    g(i + 1)
+</code></pre>
+<p>Side note: it's important to see that <code>write</code> will block the thread. There's
+an ongoing <a href="https://github.com/golang/go/issues/6817">discussion</a> to provide
+an async API for files, but it's still being considered.</p>
+<h2><a class="header" href="#reader" id="reader">Reader</a></h2>
+<p>Similarly, <code>Reader</code> is the reading counterpart. It is also an interface that wraps
+the <code>Read</code> method.</p>
+<blockquote>
+<p><code>Read</code> reads up to len(p) bytes into p. It returns the number of bytes
+read (0 &lt;= n &lt;= len(p)) and any error encountered. Even if <code>Read</code> returns
+n &lt; len(p), it may use all of p as scratch space during the call.
+If some data is available but not len(p) bytes, <code>Read</code> conventionally
+returns what is available instead of waiting for more.</p>
+</blockquote>
+<p>It is defined as:</p>
+<pre><code class="language-go">type Reader interface {
+    Read(p []byte) (n int, err error)
 }
+</code></pre>
+<p>As an implementor of <code>Read</code>, when there is nothing else to read, the Standard
+Library suggest to return 0, <code>EOF</code> instead. 0, nil is only acceptable when
+<code>p</code> length is equal to zero. But that's not happening very often.</p>
+<p>Additionally, the Standard Library suggest first reading the <code>n</code> bytes, and then
+handling the error if there was any. It adds that:</p>
+<blockquote>
+<p>Doing so correctly handles I/O errors that happen after reading some bytes and
+also both of the allowed EOF behaviors.</p>
+</blockquote>
+<p><code>Read</code> implementation for type <code>os.File</code> relies on a helper function <code>read</code> that
+does all the work (except error handling). <code>read</code> itself relies on <code>poll.FD</code> (on *nix),
+which is in charge of checking whether there is anything to be read on that
+file descriptor. For the very curious reader, go and check its implemenation of
+<code>FD</code>'s <code>Read</code> <a href="https://golang.org/src/internal/poll/fd_unix.go?s=4169:4210#L135">here</a>.</p>
+<pre><code class="language-go">func (f *File) Read(b []byte) (n int, err error) {
+	if err := f.checkValid(&quot;read&quot;); err != nil {
+		return 0, err
+	}
 
-// outputs
-// Calling g.
-// Printing in g 0
-// Printing in g 1
-// Printing in g 2
-// Printing in g 3
-// Panicking!
-// Defer in g 3
-// Defer in g 2
-// Defer in g 1
-// Defer in g 0
-
-// AND NOW, this is different!
-
-// panic: 4
-// panic PC=0x2a9cd8
-// [stack trace omitted]
+	n, e := f.read(b)
+	return n, f.wrapErr(&quot;read&quot;, e)
+}
 </code></pre>
 
                     </main>
@@ -259,15 +246,11 @@ func g(i int) {
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="built-in-panic.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="io-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="bytes-intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -277,15 +260,11 @@ func g(i int) {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="built-in-panic.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="io-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="bytes-intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
