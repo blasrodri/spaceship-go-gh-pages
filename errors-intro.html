@@ -5,22 +5,36 @@
         <meta charset="UTF-8">
         <title>Errors - Spaceship Go</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
         <link rel="shortcut icon" href="favicon.png">
+        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+        
         <link rel="stylesheet" href="css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -36,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -116,9 +130,11 @@
                     <h1 class="menu-title">Spaceship Go</h1>
 
                     <div class="right-buttons">
+                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        
                         
                     </div>
                 </div>
@@ -154,7 +170,7 @@ It treates <a href="https://blog.golang.org/errors-are-values"><strong>errors as
 and to some people unsufficient. But we won't get into this discussion here.</p>
 <p>The <code>error</code> type is used to indicate an <em>abnormal state</em>. When this happens,
 there are several ways to act. In this chapter, we will only focus on the
-availibility of tools that Go provides the developer to characterize and respond
+availability of tools that Go provides the developer to characterize and respond
 to these <em>anomalies</em>.</p>
 <p><code>error</code> is defined in the <code>built-in</code> package as:</p>
 <pre><code class="language-go">type error interface {
@@ -162,7 +178,7 @@ to these <em>anomalies</em>.</p>
 }
 </code></pre>
 <p>However, this package provides nothing else than this interface. Most of the
-sorrounding infrastructure is provided within the <code>errors</code> package instead.</p>
+surrounding infrastructure is provided within the <code>errors</code> package instead.</p>
 
                     </main>
 
@@ -206,10 +222,10 @@ sorrounding infrastructure is provided within the <code>errors</code> package in
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
