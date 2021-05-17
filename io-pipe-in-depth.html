@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#pipe" id="pipe">Pipe</a></h1>
+                        <h1 id="pipe"><a class="header" href="#pipe">Pipe</a></h1>
 <p>In Go a pipe is <strong>synchronous in-memory pipe</strong>. <code>pipe</code> is a type that
 is not publicly exposed. However, <code>io</code> allows us to interact with
 it through <code>PipeWriter</code> and <code>PipeReader</code>. In order to create
@@ -194,7 +196,7 @@ that expects an <code>io.Writer</code>. <code>Pipe</code> is a really good tool 
 <p>The data is copied directly from the <code>io.Write</code> to the corresponding <code>io.Read</code>
 (or Reads) there is no internal buffering.</p>
 </blockquote>
-<h2><a class="header" href="#video-about-pipes" id="video-about-pipes">Video about pipes</a></h2>
+<h2 id="video-about-pipes"><a class="header" href="#video-about-pipes">Video about pipes</a></h2>
 <p>I really suggest anyone to visit <a href="https://www.youtube.com/watch?v=LHZ2CAZE6Gs">this video</a>
 to get a deeper understanding on
 how to use pipes.</p>

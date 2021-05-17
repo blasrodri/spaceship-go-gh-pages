@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#as" id="as">As</a></h2>
+                        <h2 id="as"><a class="header" href="#as">As</a></h2>
 <p><code>As</code> finds the <strong>first error in err's chain that matches target</strong>. If it
 succeds, it sets target to that error value and returns true. Otherwise,
 it returns false.</p>
@@ -174,7 +176,7 @@ if errors.As(err, &amp;e) {
     // err is a *QueryError, and e is set to the error's value
 }
 </code></pre>
-<h2><a class="header" href="#is" id="is">Is</a></h2>
+<h2 id="is"><a class="header" href="#is">Is</a></h2>
 <p><code>Is</code> reports whether <strong>any error</strong> (as opposed to finding the first with <code>As</code>)
 in err's chain matches target.</p>
 <p>The chain consists of err itself followed by the <strong>sequence of errors obtained</strong>
@@ -188,7 +190,7 @@ in err's chain matches target.</p>
     // ...
 }
 </code></pre>
-<h2><a class="header" href="#remarks" id="remarks">Remarks</a></h2>
+<h2 id="remarks"><a class="header" href="#remarks">Remarks</a></h2>
 <p>One of the biggest advantages of having these two methods, is when working with
 highly nested errors. They bring all the necessary machinery to unwrap as much
 as needed until a match is found. Or if there is no match, we are sure that all

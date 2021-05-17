@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#writer" id="writer">Writer</a></h2>
+                        <h2 id="writer"><a class="header" href="#writer">Writer</a></h2>
 <p>Writer is the interface that wraps the basic Write method. <code>io</code> package makes
 extensive use of this interface. <code>Writer</code> is implemented by <code>os.File</code>. Which
 in the <code>io</code> package is used to reference to <code>Stdin</code>, <code>StdOut</code>, and <code>StdErr</code>:</p>
@@ -173,7 +175,7 @@ in the <code>io</code> package is used to reference to <code>Stdin</code>, <code
     Stderr = NewFile(uintptr(syscall.Stderr), &quot;/dev/stderr&quot;)
 )
 </code></pre>
-<h3><a class="header" href="#how-does-writer-works" id="how-does-writer-works">How does writer works?</a></h3>
+<h3 id="how-does-writer-works"><a class="header" href="#how-does-writer-works">How does writer works?</a></h3>
 <blockquote>
 <p>Write writes len(p) bytes from p to the underlying data stream.
 It returns the number of bytes written from p (0 &lt;= n &lt;= len(p))
@@ -218,7 +220,7 @@ if e != nil {
 <p>Side note: it's important to see that <code>write</code> will block the thread. There's
 an ongoing <a href="https://github.com/golang/go/issues/6817">discussion</a> to provide
 an async API for files, but it's still being considered.</p>
-<h2><a class="header" href="#reader" id="reader">Reader</a></h2>
+<h2 id="reader"><a class="header" href="#reader">Reader</a></h2>
 <p>Similarly, <code>Reader</code> is the reading counterpart. It is also an interface that wraps
 the <code>Read</code> method.</p>
 <blockquote>

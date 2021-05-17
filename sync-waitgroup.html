@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#waitgroup" id="waitgroup">WaitGroup</a></h2>
+                        <h2 id="waitgroup"><a class="header" href="#waitgroup">WaitGroup</a></h2>
 <blockquote>
 <p>A WaitGroup waits for a collection of goroutines to finish.
 The main goroutine calls <code>Add</code> to set the number of goroutines to wait for.
@@ -172,16 +174,16 @@ At the same time, <code>Wait</code> can be used to block until all goroutines ha
 </blockquote>
 <p>It's possible to have another goroutine also to wait on this group. The only
 real constraint is that <code>Add</code> can only be called by the main one.</p>
-<h3><a class="header" href="#add" id="add">Add</a></h3>
+<h3 id="add"><a class="header" href="#add">Add</a></h3>
 <pre><code class="language-go">func (wg *WaitGroup) Add(delta int)
 </code></pre>
 <p>The <strong>delta</strong> defines how many more - or less - goroutines, the goroutines
 waiting need to actually wait for. When the counter gets to zero, then
 all the waiting goroutines get released. If the counter is negative, then
 <code>Add</code> panics.</p>
-<h3><a class="header" href="#done" id="done">Done</a></h3>
+<h3 id="done"><a class="header" href="#done">Done</a></h3>
 <p>It decrements the counter by one.</p>
-<h3><a class="header" href="#wait" id="wait">Wait</a></h3>
+<h3 id="wait"><a class="header" href="#wait">Wait</a></h3>
 <p>Blocks the goroutine until the counter of the <code>WaitGroup</code> gets to zero.</p>
 
                     </main>

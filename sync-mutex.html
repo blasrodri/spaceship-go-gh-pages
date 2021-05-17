@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#mutex" id="mutex">Mutex</a></h2>
+                        <h2 id="mutex"><a class="header" href="#mutex">Mutex</a></h2>
 <p>A <code>Mutex</code> is a flag that can be held by at most one goroutine at at time. Its
 name is derived from <em>mutually exclusive</em>, which indicates its purpose. The
 <em>raison d’etre</em> of a <code>Mutex</code> is synchronization, by preventing that no other
@@ -174,7 +176,7 @@ Thus, it's allowed for a goroutine to lock the <code>Mutex</code> and another to
 it. Therefore, it's still important how the different goroutines interact with
 the resource in order both to avoid deadlocks but also to avoid accessing to
 a resource when it's not locked.</p>
-<h2><a class="header" href="#lock" id="lock">Lock</a></h2>
+<h2 id="lock"><a class="header" href="#lock">Lock</a></h2>
 <p>This is how <code>Lock</code> is implemented. But the real meat lies in <code>lockSlow</code>, which
 we won't cover here. I'm mostly copying the definition just to see how the pieces
 are put together. The complete implementation is quite complicated, and it involves
@@ -192,7 +194,7 @@ assembly code in the very end.</p>
 </code></pre>
 <p>If the <code>Mutex</code> is already locked, then the goroutine that calls <code>Lock</code> will block
 until the <code>Mutex</code> gets released, and can be locked by it. </p>
-<h2><a class="header" href="#unlock" id="unlock">Unlock</a></h2>
+<h2 id="unlock"><a class="header" href="#unlock">Unlock</a></h2>
 <p>This method is responsible for unlocking the <code>Mutex</code>. It can be called from any
 goroutine, and it's not necessary that is the one that locked it. However, if
 it's unlocked, it cannot be unlocked right away. Otherwise, it panics. 

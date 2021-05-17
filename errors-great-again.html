@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#making-error-great-again" id="making-error-great-again">Making error great again</a></h2>
+                        <h2 id="making-error-great-again"><a class="header" href="#making-error-great-again">Making error great again</a></h2>
 <p>The following is a canonical example of how horrible error handling
 can become in Go:</p>
 <pre><code class="language-go">_, err = fd.Write(p0[a:b])
@@ -227,7 +229,7 @@ if ew.err != nil {
 <p>Here, <code>write</code> checks whether <code>errWriter</code> have failed before. If it
 did, then it won't do anything again; we are an <em>abnormal state</em> already.
 Otherwise, it's free to do some work.</p>
-<h3><a class="header" href="#references" id="references">References:</a></h3>
+<h3 id="references"><a class="header" href="#references">References:</a></h3>
 <ul>
 <li>https://blog.golang.org/errors-are-values</li>
 <li>http://jxck.hatenablog.com/entry/golang-error-handling-lesson-by-rob-pike</li>

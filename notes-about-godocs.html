@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#notes-about-go-docs" id="notes-about-go-docs">Notes about Go docs</a></h1>
+                        <h1 id="notes-about-go-docs"><a class="header" href="#notes-about-go-docs">Notes about Go docs</a></h1>
 <p>When visiting any of the packages in <a href="https://golang.org/pkg/">Go Std Library</a>,
 there is a certain pattern that is being kept through. It helps to dissect it,
 so that we know what to expect from these docs, and also where to get extra
@@ -184,7 +186,7 @@ private items of the package. This can help to get some understanding of the
 design choices and trade-offs of some implementation. These private blocks are
 found directly in the source code of the package, which is found at the bottom
 of the index and examples, with the title of <strong>package files</strong>.</p>
-<h2><a class="header" href="#go-specification" id="go-specification">Go Specification</a></h2>
+<h2 id="go-specification"><a class="header" href="#go-specification">Go Specification</a></h2>
 <p>It's important to note that, while the scope of this book is the Standard Library,
 there is a lot of useful information in the <a href="https://golang.org/ref/spec">Go Spec</a>.
 This is a resource that needs to be considered and reviewed almost every time,

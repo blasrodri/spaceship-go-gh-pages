@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#context-details" id="context-details">Context details</a></h1>
+                        <h1 id="context-details"><a class="header" href="#context-details">Context details</a></h1>
 <p>The <code>Context</code> carries a deadline, a cancellation signal, <code>Done</code> and other values
 across processes and APIs. It is defined as an interface:</p>
 <pre><code class="language-go">type Context interface {
@@ -189,7 +191,7 @@ embedded context.</li>
 func WithDeadline(parent Context, d time.Time) (Context, CancelFunc)
 func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc)
 </code></pre>
-<h2><a class="header" href="#cancelfunc" id="cancelfunc">CancelFunc</a></h2>
+<h2 id="cancelfunc"><a class="header" href="#cancelfunc">CancelFunc</a></h2>
 <pre><code class="language-go">type CancelFunc func()
 </code></pre>
 <p>When creating a context, there are some factory functions. And all of them return a <code>CancelFunc</code> type.
@@ -198,7 +200,7 @@ it can be called by multiple goroutines simultaneously. After the first call, th
 no-ops.</p>
 <p>As an example, for the <code>cancelCtx</code>, <code>cancel</code> method exists. It closes the <code>done</code> channel and cancels
 all of its children, plus some other cleaning tasks.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>This is an extension of the original example provided in the std library.
 It depicts the usage of context within several goroutines that form a tree.</p>
 <p>Once the main goroutine triggers the <code>cancel</code> function, all the others
@@ -276,7 +278,7 @@ Closing gen
 Starting child
 Closing child
 </code></pre>
-<h3><a class="header" href="#using-withtimeout" id="using-withtimeout">Using WithTimeout</a></h3>
+<h3 id="using-withtimeout"><a class="header" href="#using-withtimeout">Using WithTimeout</a></h3>
 <p>This example is rather simple. But it shows how to propagate a timeout into a tree.
 Here we show how the main goroutine receives a <code>Done</code> signal after 50 miliseconds. This
 triggers (through <code>cancel</code>) subsequent <code>Done</code> signals to all the goroutines that
@@ -318,7 +320,7 @@ func main() {
 
 }
 </code></pre>
-<h2><a class="header" href="#context-being-used-in-the-real-world" id="context-being-used-in-the-real-world">Context being used in the real world</a></h2>
+<h2 id="context-being-used-in-the-real-world"><a class="header" href="#context-being-used-in-the-real-world">Context being used in the real world</a></h2>
 <p>These are some libraries making heavy use of this pattern:</p>
 <ol>
 <li><a href="https://github.com/kubernetes/kubernetes">kubernetes</a></li>

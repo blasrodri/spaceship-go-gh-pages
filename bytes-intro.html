@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,13 +165,13 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#bytes" id="bytes">Bytes</a></h1>
+                        <h1 id="bytes"><a class="header" href="#bytes">Bytes</a></h1>
 <p>Bytes are program's building blocks.</p>
 <p>In Go, a byte is a type alias of <code>uint8</code>, and thus it is defined as:</p>
 <pre><code class="language-go">type byte = uint8
 </code></pre>
 <p>And thus, when talking about <strong>bytes</strong>, we mean a slice of <code>byte</code>, namely: <code>[]byte</code>.</p>
-<h2><a class="header" href="#why-and-when-use-bytes" id="why-and-when-use-bytes">Why and when use bytes?</a></h2>
+<h2 id="why-and-when-use-bytes"><a class="header" href="#why-and-when-use-bytes">Why and when use bytes?</a></h2>
 <p>Bytes are pervasive, especially when working in systems programming. If you want
 to work on an application related to networking, operating systems, databases,
 you will likely end up working with bytes. And that is why it's very important

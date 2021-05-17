@@ -138,13 +138,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -167,7 +169,7 @@
                     <main>
                         <p><img src="./controllers_brief.svg" alt="" />
 <img src="./img/cover.svg"></p>
-<h1><a class="header" href="#preface" id="preface">Preface</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="preface"><a class="header" href="#preface">Preface</a></h1>
 <p>Welcome, traveler! This is a set of notes of my journey into part of Go's
 standard library, comprised into a book. I hope you enjoy it!
 Each chapter provides a dive into some packages. I will provide a brief
@@ -175,19 +177,19 @@ introduction of what is the main purpose of the package, and some examples to
 help to understand. In some cases, I will add some references to external
 content that work either as a complementary view to the topic, or even to extend
 the coverage of the subject.</p>
-<h2><a class="header" href="#who-is-this-book-for" id="who-is-this-book-for">Who is this book for?</a></h2>
+<h2 id="who-is-this-book-for"><a class="header" href="#who-is-this-book-for">Who is this book for?</a></h2>
 <p>Ideally you are a software developer, or someone with great interest in how to write
 code. Having an understanding on the syntax and certain command of the Go programming
 language will certainly help. However, I will try to keep the explanations as
 simple as possible in order to be able to reach to a larger audience. And
 hopefully, this will still be found interesting for those looking for getting
 a deeper understanding of what tools the language and its runtime has to offer.</p>
-<h2><a class="header" href="#feedback-and-comments" id="feedback-and-comments">Feedback and comments</a></h2>
+<h2 id="feedback-and-comments"><a class="header" href="#feedback-and-comments">Feedback and comments</a></h2>
 <p>This book is built entirely using markdown. And it's also hosted publicly on Github.
 For comments, issues, or any kind of feedback, please use the
 <a href="https://github.com/blasrodri/spaceship-go">Spaceship Go</a> repository. PR's are more
 than wlecome, of any type!</p>
-<h2><a class="header" href="#special-thanks" id="special-thanks">Special thanks</a></h2>
+<h2 id="special-thanks"><a class="header" href="#special-thanks">Special thanks</a></h2>
 <p>Most of the book is just my interpretation of the Go's standard library. Besides this, I've
 found that the Go Blog is an extremely useful resource. Big thanks especially
 to Andrew Gerrand, for all the great contributions he has in that space.</p>
@@ -195,7 +197,7 @@ to Andrew Gerrand, for all the great contributions he has in that space.</p>
 recommend. It was particularly useful to prepare the groundwork for the <code>Context</code>
 chapter. Thanks to its creator, Francesc Campoy.</p>
 <p>The cover of the book is based on original work from <a href="https://github.com/egonelbre/gophers">egonelbre gophers repo</a></p>
-<h1><a class="header" href="#notes-about-go-docs" id="notes-about-go-docs">Notes about Go docs</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="notes-about-go-docs"><a class="header" href="#notes-about-go-docs">Notes about Go docs</a></h1>
 <p>When visiting any of the packages in <a href="https://golang.org/pkg/">Go Std Library</a>,
 there is a certain pattern that is being kept through. It helps to dissect it,
 so that we know what to expect from these docs, and also where to get extra
@@ -216,12 +218,12 @@ private items of the package. This can help to get some understanding of the
 design choices and trade-offs of some implementation. These private blocks are
 found directly in the source code of the package, which is found at the bottom
 of the index and examples, with the title of <strong>package files</strong>.</p>
-<h2><a class="header" href="#go-specification" id="go-specification">Go Specification</a></h2>
+<h2 id="go-specification"><a class="header" href="#go-specification">Go Specification</a></h2>
 <p>It's important to note that, while the scope of this book is the Standard Library,
 there is a lot of useful information in the <a href="https://golang.org/ref/spec">Go Spec</a>.
 This is a resource that needs to be considered and reviewed almost every time,
 when in doubt of how internal things work in the language.</p>
-<h1><a class="header" href="#built-in" id="built-in">Built in</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="built-in"><a class="header" href="#built-in">Built in</a></h1>
 <blockquote>
 <p>Package builtin provides documentation for Go's predeclared identifiers.
 The items documented here are not actually in package builtin (...)</p>
@@ -231,8 +233,8 @@ The items documented here are not actually in package builtin (...)</p>
 compilation of highly used items that every Go developer needs to be aware of.
 The goal of this chapter is to cover some of these elements, with special focus
 on how they are implemented.</p>
-<h2><a class="header" href="#constants" id="constants">Constants</a></h2>
-<p>Boolans true and false are defined here. And in a very smart and concise way:</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="constants"><a class="header" href="#constants">Constants</a></h2>
+<p>Booleans true and false are defined here. And in a very smart and concise way:</p>
 <pre><code class="language-go">const (
     true = 0 == 0 // this is always true!
     false = 0 != 0 // this is always false!
@@ -263,8 +265,8 @@ const (
 </code></pre>
 <p>It represents the zero value of a type, within these clases: slices, pointer,
 map, func, interface, or channel.</p>
-<h1><a class="header" href="#make-and-new" id="make-and-new">make and new</a></h1>
-<h2><a class="header" href="#make" id="make">make</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="make-and-new"><a class="header" href="#make-and-new">make and new</a></h1>
+<h2 id="make"><a class="header" href="#make">make</a></h2>
 <p><code>make</code> is a very singular function. Its purpose is to allocate and initialize
 an object of type slice, map, or chan (only). The output depends on the type
 it's operating upon. You can see the differences, depending upon the type in the
@@ -279,10 +281,10 @@ func makeslice(typ *byte, len int, cap int) unsafe.Pointer
 func makeslice64(typ *byte, len int64, cap int64) unsafe.Pointer
 func makeslicecopy(typ *byte, tolen int, fromlen int, from unsafe.Pointer) unsafe.Pointer
 </code></pre>
-<h2><a class="header" href="#new" id="new">new</a></h2>
+<h2 id="new"><a class="header" href="#new">new</a></h2>
 <p>It can be thought as a <code>make</code> alternative, but with a size equal to zero and
 always initializing the value to its zero value.</p>
-<h2><a class="header" href="#defer" id="defer">defer</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="defer"><a class="header" href="#defer">defer</a></h2>
 <p>This function is not defined in the built-in package. But since it is used in
 the example for <code>recover</code> I wanted to mention it.</p>
 <p><code>defer</code> is used to ensure that a function will be executed right before the 
@@ -321,7 +323,7 @@ func main() {
 2
 1
 </code></pre>
-<h2><a class="header" href="#panic" id="panic">panic</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="panic"><a class="header" href="#panic">panic</a></h2>
 <p>It's a function that stops the normal execution of the goroutine. All the
 deferred functions are still being called, and once they complete this goroutine
 returns to the caller. To the caller, the panic on the callee triggers a
@@ -339,7 +341,7 @@ func panicdivide()
 func panicIndex(x, y int)
 func panicIndexU(x uint, y int)
 </code></pre>
-<h2><a class="header" href="#recover" id="recover">recover</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="recover"><a class="header" href="#recover">recover</a></h2>
 <p>Recover is a built-in function allows a program to manage behavior of a panicking
 goroutine. It is useful only <strong>inside a deferred function</strong>. It stops the panicking
 sequence by restoring normal execution and retrieves the error value passed to the
@@ -445,20 +447,20 @@ func g(i int) {
 // panic PC=0x2a9cd8
 // [stack trace omitted]
 </code></pre>
-<h1><a class="header" href="#bytes" id="bytes">Bytes</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="bytes"><a class="header" href="#bytes">Bytes</a></h1>
 <p>Bytes are program's building blocks.</p>
 <p>In Go, a byte is a type alias of <code>uint8</code>, and thus it is defined as:</p>
 <pre><code class="language-go">type byte = uint8
 </code></pre>
 <p>And thus, when talking about <strong>bytes</strong>, we mean a slice of <code>byte</code>, namely: <code>[]byte</code>.</p>
-<h2><a class="header" href="#why-and-when-use-bytes" id="why-and-when-use-bytes">Why and when use bytes?</a></h2>
+<h2 id="why-and-when-use-bytes"><a class="header" href="#why-and-when-use-bytes">Why and when use bytes?</a></h2>
 <p>Bytes are pervasive, especially when working in systems programming. If you want
 to work on an application related to networking, operating systems, databases,
 you will likely end up working with bytes. And that is why it's very important
 to understand what tools are available off the self.</p>
 <p>In the following sections, we will address some operations Go allows us to
 perform on bytes.</p>
-<h2><a class="header" href="#compare" id="compare">Compare</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="compare"><a class="header" href="#compare">Compare</a></h2>
 <p>First, we can compare two bytes. That is, having a function that tells us whether
 these two bytes are the same or not.</p>
 <pre><code class="language-go">func Compare(a, b []byte) int
@@ -488,7 +490,7 @@ in Go. This means that the byte comparison function is implemented in a lower la
 assembly.</p>
 <p>Check <a href="https://golang.org/cmd/compile/#hdr-Compiler_Directives">Compiler directives</a> if you
 want to get more details in this topic.</p>
-<h1><a class="header" href="#index" id="index">Index</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="index"><a class="header" href="#index">Index</a></h1>
 <p>Let's say we have some bytes, represented as a slice of byte, which in Go lingo means
 <code>[]byte</code>. If we want to verify whether these bytes contain a certain subset of bytes,
 and we're particularly interested in knowing where in the slice they are located
@@ -506,7 +508,7 @@ This is also an assembly function. One of its variants can be found <a href="htt
 <p>Besides the full implementation, sometimes it's usefule to follow how things work under the hood.
 And in such a low level package, we can find the need of working with assembly and targetting
 the different architectures. Check <a href="https://golang.org/src/internal/bytealg/">bytealg package</a> for an overview.</p>
-<h2><a class="header" href="#working-with-buffers" id="working-with-buffers">Working with buffers</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="working-with-buffers"><a class="header" href="#working-with-buffers">Working with buffers</a></h2>
 <p>Sometimes our program needs to manipulate bytes. And we might or might not now
 what's the size of this stream of bytes coming. Or perhaps we need to work with
 chunks... who knows!</p>
@@ -543,7 +545,7 @@ An alternative of achieving it would be:</p>
 b = append([]T(nil), b[:newSize]...)
 </code></pre>
 <p>It is possible to work with the <code>Reader</code> interface. But it won't be covered in this chapter.</p>
-<h1><a class="header" href="#context" id="context">Context</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="context"><a class="header" href="#context">Context</a></h1>
 <p>Package context defines the Context type. A context can include deadlines,
 cancellation signals, and other request-scoped values across API boundaries
 and between processes. A key feature of this pattern is that it allows signals
@@ -566,7 +568,7 @@ The Context should be the first parameter, typically named ctx:</p>
 <p>Next, we describe some different functionalities offered by the package
 and show alternatives of how it can be used. Much of it has been taken from
 <a href="https://blog.golang.org/context">this blog post</a> by Sameer Ajmani.</p>
-<h1><a class="header" href="#context-details" id="context-details">Context details</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="context-details"><a class="header" href="#context-details">Context details</a></h1>
 <p>The <code>Context</code> carries a deadline, a cancellation signal, <code>Done</code> and other values
 across processes and APIs. It is defined as an interface:</p>
 <pre><code class="language-go">type Context interface {
@@ -592,7 +594,7 @@ embedded context.</li>
 func WithDeadline(parent Context, d time.Time) (Context, CancelFunc)
 func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc)
 </code></pre>
-<h2><a class="header" href="#cancelfunc" id="cancelfunc">CancelFunc</a></h2>
+<h2 id="cancelfunc"><a class="header" href="#cancelfunc">CancelFunc</a></h2>
 <pre><code class="language-go">type CancelFunc func()
 </code></pre>
 <p>When creating a context, there are some factory functions. And all of them return a <code>CancelFunc</code> type.
@@ -601,7 +603,7 @@ it can be called by multiple goroutines simultaneously. After the first call, th
 no-ops.</p>
 <p>As an example, for the <code>cancelCtx</code>, <code>cancel</code> method exists. It closes the <code>done</code> channel and cancels
 all of its children, plus some other cleaning tasks.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>This is an extension of the original example provided in the std library.
 It depicts the usage of context within several goroutines that form a tree.</p>
 <p>Once the main goroutine triggers the <code>cancel</code> function, all the others
@@ -679,7 +681,7 @@ Closing gen
 Starting child
 Closing child
 </code></pre>
-<h3><a class="header" href="#using-withtimeout" id="using-withtimeout">Using WithTimeout</a></h3>
+<h3 id="using-withtimeout"><a class="header" href="#using-withtimeout">Using WithTimeout</a></h3>
 <p>This example is rather simple. But it shows how to propagate a timeout into a tree.
 Here we show how the main goroutine receives a <code>Done</code> signal after 50 miliseconds. This
 triggers (through <code>cancel</code>) subsequent <code>Done</code> signals to all the goroutines that
@@ -721,14 +723,14 @@ func main() {
 
 }
 </code></pre>
-<h2><a class="header" href="#context-being-used-in-the-real-world" id="context-being-used-in-the-real-world">Context being used in the real world</a></h2>
+<h2 id="context-being-used-in-the-real-world"><a class="header" href="#context-being-used-in-the-real-world">Context being used in the real world</a></h2>
 <p>These are some libraries making heavy use of this pattern:</p>
 <ol>
 <li><a href="https://github.com/kubernetes/kubernetes">kubernetes</a></li>
 <li><a href="https://github.com/grpc/grpc-go">gRPC</a></li>
 <li><a href="https://github.com/dgraph-io/dgraph">dgraph</a></li>
 </ol>
-<h2><a class="header" href="#errors" id="errors">Errors</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="errors"><a class="header" href="#errors">Errors</a></h2>
 <p>Error handling is a very important topic in software engineering. There are
 plenty different schools of thought. Go's approach to it is very simple.
 It treates <a href="https://blog.golang.org/errors-are-values"><strong>errors as values</strong></a>,
@@ -744,7 +746,7 @@ to these <em>anomalies</em>.</p>
 </code></pre>
 <p>However, this package provides nothing else than this interface. Most of the
 surrounding infrastructure is provided within the <code>errors</code> package instead.</p>
-<h2><a class="header" href="#as" id="as">As</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="as"><a class="header" href="#as">As</a></h2>
 <p><code>As</code> finds the <strong>first error in err's chain that matches target</strong>. If it
 succeds, it sets target to that error value and returns true. Otherwise,
 it returns false.</p>
@@ -755,7 +757,7 @@ if errors.As(err, &amp;e) {
     // err is a *QueryError, and e is set to the error's value
 }
 </code></pre>
-<h2><a class="header" href="#is" id="is">Is</a></h2>
+<h2 id="is"><a class="header" href="#is">Is</a></h2>
 <p><code>Is</code> reports whether <strong>any error</strong> (as opposed to finding the first with <code>As</code>)
 in err's chain matches target.</p>
 <p>The chain consists of err itself followed by the <strong>sequence of errors obtained</strong>
@@ -769,12 +771,12 @@ in err's chain matches target.</p>
     // ...
 }
 </code></pre>
-<h2><a class="header" href="#remarks" id="remarks">Remarks</a></h2>
+<h2 id="remarks"><a class="header" href="#remarks">Remarks</a></h2>
 <p>One of the biggest advantages of having these two methods, is when working with
 highly nested errors. They bring all the necessary machinery to unwrap as much
 as needed until a match is found. Or if there is no match, we are sure that all
 the inner errors were also compared.</p>
-<h2><a class="header" href="#unwrap" id="unwrap">Unwrap</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="unwrap"><a class="header" href="#unwrap">Unwrap</a></h2>
 <p><em>(feature added in Go 1.13)</em></p>
 <p>This is an interesting feature, when building errors that
 <strong>contain other errors</strong>.</p>
@@ -853,7 +855,7 @@ func main() {
 we can choose to define a strategy for the different scenarios. So, in this
 particular example, we could ask the user to make the query again and remind
 her not to forget to include <em>name</em> as a paramter.</p>
-<h2><a class="header" href="#making-error-great-again" id="making-error-great-again">Making error great again</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="making-error-great-again"><a class="header" href="#making-error-great-again">Making error great again</a></h2>
 <p>The following is a canonical example of how horrible error handling
 can become in Go:</p>
 <pre><code class="language-go">_, err = fd.Write(p0[a:b])
@@ -917,12 +919,12 @@ if ew.err != nil {
 <p>Here, <code>write</code> checks whether <code>errWriter</code> have failed before. If it
 did, then it won't do anything again; we are an <em>abnormal state</em> already.
 Otherwise, it's free to do some work.</p>
-<h3><a class="header" href="#references" id="references">References:</a></h3>
+<h3 id="references"><a class="header" href="#references">References:</a></h3>
 <ul>
 <li>https://blog.golang.org/errors-are-values</li>
 <li>http://jxck.hatenablog.com/entry/golang-error-handling-lesson-by-rob-pike</li>
 </ul>
-<h1><a class="header" href="#sync" id="sync">Sync</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="sync"><a class="header" href="#sync">Sync</a></h1>
 <p>When working on a concurrent setup, Go's capabilities shine. It exposes natively
 channels and goroutines. It makes it really easy to get off the ground with a
 program that can -in many cases- run much faster.</p>
@@ -934,12 +936,12 @@ to the <code>sync</code> package can be a really good option.</p>
 cover from each package. But <code>sync</code>is an exception. I will cover everything from
 it, because I really believe it's a critical package. And mastering makes a
 difference.</p>
-<h2><a class="header" href="#cond" id="cond">Cond</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="cond"><a class="header" href="#cond">Cond</a></h2>
 <blockquote>
 <p>Cond implements a condition variable, a rendezvous point for goroutines
 waiting for or announcing the occurrence of an event. </p>
 </blockquote>
-<h2><a class="header" href="#broadcast" id="broadcast">Broadcast</a></h2>
+<h2 id="broadcast"><a class="header" href="#broadcast">Broadcast</a></h2>
 <p>A typical use case for <code>Broacast</code> is when multiple goroutines are waiting
 for something to happen. In order to let all of them that a certain event
 happened using channels, then we would need to have one channel for each
@@ -982,11 +984,11 @@ func notifyListNotifyAll(l *notifyList) {
 	}
 }
 </code></pre>
-<h2><a class="header" href="#signal" id="signal">Signal</a></h2>
+<h2 id="signal"><a class="header" href="#signal">Signal</a></h2>
 <p>Signal will only wake <strong>one</strong> goroutine, if there was at least one waiting.</p>
 <p>The implementation is similar to the one for <code>Broadcast</code>. This time, it relies
 on a helper function called <code>notifyListNotifyOne</code>.</p>
-<h2><a class="header" href="#wait" id="wait">Wait</a></h2>
+<h2 id="wait"><a class="header" href="#wait">Wait</a></h2>
 <p>Cond has an associated <code>Locker</code> (which normally is a *Mutex or *RWMutex). This
 <code>Locker</code> must be held when calling the Wait method.</p>
 <p>If there's a goroutine that needs to be awaken to do some work,
@@ -1003,7 +1005,7 @@ it can be modelled as follow:</p>
 }
 </code></pre>
 <p>For completeness, a <code>Locker</code> is just an interface that defines two methods: <code>Lock</code> and <code>Unlock</code>.</p>
-<h2><a class="header" href="#mutex" id="mutex">Mutex</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="mutex"><a class="header" href="#mutex">Mutex</a></h2>
 <p>A <code>Mutex</code> is a flag that can be held by at most one goroutine at at time. Its
 name is derived from <em>mutually exclusive</em>, which indicates its purpose. The
 <em>raison d’etre</em> of a <code>Mutex</code> is synchronization, by preventing that no other
@@ -1014,7 +1016,7 @@ Thus, it's allowed for a goroutine to lock the <code>Mutex</code> and another to
 it. Therefore, it's still important how the different goroutines interact with
 the resource in order both to avoid deadlocks but also to avoid accessing to
 a resource when it's not locked.</p>
-<h2><a class="header" href="#lock" id="lock">Lock</a></h2>
+<h2 id="lock"><a class="header" href="#lock">Lock</a></h2>
 <p>This is how <code>Lock</code> is implemented. But the real meat lies in <code>lockSlow</code>, which
 we won't cover here. I'm mostly copying the definition just to see how the pieces
 are put together. The complete implementation is quite complicated, and it involves
@@ -1032,7 +1034,7 @@ assembly code in the very end.</p>
 </code></pre>
 <p>If the <code>Mutex</code> is already locked, then the goroutine that calls <code>Lock</code> will block
 until the <code>Mutex</code> gets released, and can be locked by it. </p>
-<h2><a class="header" href="#unlock" id="unlock">Unlock</a></h2>
+<h2 id="unlock"><a class="header" href="#unlock">Unlock</a></h2>
 <p>This method is responsible for unlocking the <code>Mutex</code>. It can be called from any
 goroutine, and it's not necessary that is the one that locked it. However, if
 it's unlocked, it cannot be unlocked right away. Otherwise, it panics. 
@@ -1050,7 +1052,7 @@ func (m *Mutex) unlockSlow(new int32) {
     */
 }
 </code></pre>
-<h2><a class="header" href="#once---do" id="once---do">Once - Do</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="once---do"><a class="header" href="#once---do">Once - Do</a></h2>
 <p>A very simple - but sometimes useful - method is <code>Do</code>. Its role is simply to
 guarantee that a function run through it won't run more than once. This means
 that if we have:</p>
@@ -1064,7 +1066,7 @@ fmt.Print(a) // [1] and not [1 2]
 called or initialized only once. In order to be able to call it again, and
 that the function is actually run, another instance of <code>Once</code> needs to be
 defined. And <code>Do</code> called from that new instance.</p>
-<h2><a class="header" href="#pool" id="pool">Pool</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="pool"><a class="header" href="#pool">Pool</a></h2>
 <blockquote>
 <p>A Pool is a set of temporary objects that may be individually saved and retrieved.</p>
 </blockquote>
@@ -1089,7 +1091,7 @@ use. It releives pressure from the garbage collector. However,
 a new one by calling <code>New</code>. </p>
 <p>Once an item has been used, it can be returned to the <code>Pool</code> by
 calling <code>Put</code>. <code>Put</code> adds an item back into the <code>Pool</code>.</p>
-<h2><a class="header" href="#waitgroup" id="waitgroup">WaitGroup</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="waitgroup"><a class="header" href="#waitgroup">WaitGroup</a></h2>
 <blockquote>
 <p>A WaitGroup waits for a collection of goroutines to finish.
 The main goroutine calls <code>Add</code> to set the number of goroutines to wait for.
@@ -1098,18 +1100,18 @@ At the same time, <code>Wait</code> can be used to block until all goroutines ha
 </blockquote>
 <p>It's possible to have another goroutine also to wait on this group. The only
 real constraint is that <code>Add</code> can only be called by the main one.</p>
-<h3><a class="header" href="#add" id="add">Add</a></h3>
+<h3 id="add"><a class="header" href="#add">Add</a></h3>
 <pre><code class="language-go">func (wg *WaitGroup) Add(delta int)
 </code></pre>
 <p>The <strong>delta</strong> defines how many more - or less - goroutines, the goroutines
 waiting need to actually wait for. When the counter gets to zero, then
 all the waiting goroutines get released. If the counter is negative, then
 <code>Add</code> panics.</p>
-<h3><a class="header" href="#done" id="done">Done</a></h3>
+<h3 id="done"><a class="header" href="#done">Done</a></h3>
 <p>It decrements the counter by one.</p>
-<h3><a class="header" href="#wait-1" id="wait-1">Wait</a></h3>
+<h3 id="wait-1"><a class="header" href="#wait-1">Wait</a></h3>
 <p>Blocks the goroutine until the counter of the <code>WaitGroup</code> gets to zero.</p>
-<h2><a class="header" href="#io" id="io">IO</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="io"><a class="header" href="#io">IO</a></h2>
 <blockquote>
 <p>Package io provides basic interfaces to I/O primitives.
 Its primary job is to wrap existing implementations of such primitives,
@@ -1121,7 +1123,7 @@ and interfaces that every developer needs to understand in order to work
 properly with bytes, standard input, output, error and pipes among others.</p>
 <p>An important note is that these primitives are not thread safe by default.
 This means that they shouldn't be used by multiple goroutines at the same time.</p>
-<h2><a class="header" href="#writer" id="writer">Writer</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="writer"><a class="header" href="#writer">Writer</a></h2>
 <p>Writer is the interface that wraps the basic Write method. <code>io</code> package makes
 extensive use of this interface. <code>Writer</code> is implemented by <code>os.File</code>. Which
 in the <code>io</code> package is used to reference to <code>Stdin</code>, <code>StdOut</code>, and <code>StdErr</code>:</p>
@@ -1131,7 +1133,7 @@ in the <code>io</code> package is used to reference to <code>Stdin</code>, <code
     Stderr = NewFile(uintptr(syscall.Stderr), &quot;/dev/stderr&quot;)
 )
 </code></pre>
-<h3><a class="header" href="#how-does-writer-works" id="how-does-writer-works">How does writer works?</a></h3>
+<h3 id="how-does-writer-works"><a class="header" href="#how-does-writer-works">How does writer works?</a></h3>
 <blockquote>
 <p>Write writes len(p) bytes from p to the underlying data stream.
 It returns the number of bytes written from p (0 &lt;= n &lt;= len(p))
@@ -1176,7 +1178,7 @@ if e != nil {
 <p>Side note: it's important to see that <code>write</code> will block the thread. There's
 an ongoing <a href="https://github.com/golang/go/issues/6817">discussion</a> to provide
 an async API for files, but it's still being considered.</p>
-<h2><a class="header" href="#reader" id="reader">Reader</a></h2>
+<h2 id="reader"><a class="header" href="#reader">Reader</a></h2>
 <p>Similarly, <code>Reader</code> is the reading counterpart. It is also an interface that wraps
 the <code>Read</code> method.</p>
 <blockquote>
@@ -1214,7 +1216,7 @@ file descriptor. For the very curious reader, go and check its implemenation of
 	return n, f.wrapErr(&quot;read&quot;, e)
 }
 </code></pre>
-<h1><a class="header" href="#pipe" id="pipe">Pipe</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="pipe"><a class="header" href="#pipe">Pipe</a></h1>
 <p>In Go a pipe is <strong>synchronous in-memory pipe</strong>. <code>pipe</code> is a type that
 is not publicly exposed. However, <code>io</code> allows us to interact with
 it through <code>PipeWriter</code> and <code>PipeReader</code>. In order to create
@@ -1245,7 +1247,7 @@ that expects an <code>io.Writer</code>. <code>Pipe</code> is a really good tool 
 <p>The data is copied directly from the <code>io.Write</code> to the corresponding <code>io.Read</code>
 (or Reads) there is no internal buffering.</p>
 </blockquote>
-<h2><a class="header" href="#video-about-pipes" id="video-about-pipes">Video about pipes</a></h2>
+<h2 id="video-about-pipes"><a class="header" href="#video-about-pipes">Video about pipes</a></h2>
 <p>I really suggest anyone to visit <a href="https://www.youtube.com/watch?v=LHZ2CAZE6Gs">this video</a>
 to get a deeper understanding on
 how to use pipes.</p>
