@@ -582,11 +582,11 @@ across processes and APIs. It is defined as an interface:</p>
 <p>The package provides different types of contexts, with different <em>service levels</em>:</p>
 <ul>
 <li>emtpyCtx: it's one that is never cancelled, has no values and no deadline</li>
-<li>canccelCtx: is one that can be cancelled. When cancelled, it also cancels all
+<li>cancelCtx: is one that can be cancelled. When cancelled, it also cancels all
 its children that implement cancel.</li>
 <li>valueCtx: carries a key-value pair. Delegates all other calls (such as cancel) to its
 embedded context.</li>
-<li>timerCtx: carries a timer and a deadline. It embeds <code>canccelCtx</code> to implement <code>Done</code> and <code>Err</code>.
+<li>timerCtx: carries a timer and a deadline. It embeds <code>cancelCtx</code> to implement <code>Done</code> and <code>Err</code>.
 <code>cancel</code> is implementing by stopping its timer and delegating the call to <code>cancelCtx</code></li>
 </ul>
 <p>It's important to note that as a user of the package, we only have access to these types through</p>
